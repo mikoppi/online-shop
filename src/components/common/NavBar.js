@@ -1,16 +1,17 @@
 import React from 'react'
 import { Link, NavLink } from "react-router-dom"
 import './styles/NavBar.css'
+import { FaShoppingCart } from 'react-icons/fa'
 
 const NavBar = () => {
 
   let activeStyle = {
-    color: "black",
+    backgroundColor: "black",
   };
 
   return (
     <nav className='nav'>
-      <Link to='/' className='site-name'>Online shop</Link>
+      <Link to='/' className='site-name'>SteamGamesUnder$10</Link>
       <ul>
         <li>
           <NavLink
@@ -33,7 +34,7 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li>
-          <button className='cart-button'>Cart</button>
+          <button className='cart-button'><FaShoppingCart size={42} style={{color: 'white'}}/></button>
         
         </li>
       </ul>

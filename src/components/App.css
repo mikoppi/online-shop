@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Amazon';
+    src: url('/src/downloads/OfficinaSansStd-Bold.otf') format('truetype');
+  }
+
+body {
+    margin:0;
+    font-family: 'Amazon';
+}

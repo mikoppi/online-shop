@@ -3,6 +3,7 @@ import NavBar from './common/NavBar'
 import { Routes, Route } from 'react-router-dom'
 import Home from './homepage/Home'
 import Shop from './shop/Shop'
+import './App.css'
 
 const App = () => {
   return (
