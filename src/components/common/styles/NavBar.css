@@ -1,15 +1,22 @@
+:root {
+    --z-index-overlay: 1;
+}   
+
 * {
     box-sizing:border-box;
 }
 
 .nav {
     background-color: #66c0f4;
-    color: #c7d5e0;
+    color: #cfe0ec;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     gap:2rem;
     padding: 0 8rem;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-index-overlay);
 
 }
 
