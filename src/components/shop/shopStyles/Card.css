@@ -1,0 +1,62 @@
+.card > * {
+    margin:0;
+    
+}
+
+.card > .more > * {
+    margin: 0;
+}
+
+.more {
+    width: 250px;
+}
+
+.card > img {
+    border-radius: 10px
+}
+
+.card > img:hover {
+    filter: brightness(150%);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    max-width: 250px;
+    color: #c7d5e0;
+    
+}
+
+.review {
+    display: flex;
+    gap: 20px;
+    
+    
+}
+
+.review > span > a {
+    font-size: 1rem;
+    margin:0;
+    padding:0;
+}
+
+#score {
+    margin-left: auto;
+}
+
+.normal-price {
+    text-decoration: line-through;
+}
+
+.price > span {
+    color: #c7d5e0;
+    background-color: rgba(0, 128, 0, 0.473);
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.price{
+    color: #c7d5e0;
+    
+}

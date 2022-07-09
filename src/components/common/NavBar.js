@@ -11,7 +11,7 @@ const NavBar = () => {
 
   return (
     <nav className='nav'>
-      <Link to='/' className='site-name'>SteamGamesUnder$10</Link>
+      <Link to='/' className='site-name'>SteamGamesUnder10€</Link>
       <ul>
         <li>
           <NavLink

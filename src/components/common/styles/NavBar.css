@@ -3,8 +3,8 @@
 }
 
 .nav {
-    background-color: dimgray;
-    color: white;
+    background-color: #66c0f4;
+    color: #c7d5e0;
     display: flex;
     justify-content: space-between;
     align-items: stretch;

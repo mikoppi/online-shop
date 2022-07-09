@@ -21,14 +21,19 @@ const Shop = () => {
             const id = game[i].gameID;
             const name = game[i].title
             const picture = game[i].thumb;
-            const price = game[i].salePrice
-            games.push({id, name, picture, price})
+            const price = game[i].salePrice;
+            const normalPrice = game[i].normalPrice;
+            const review = game[i].metacriticLink;
+            const saving = game[i].savings;
+            const score = game[i].steamRatingPercent;
+            const steamId = game[i].steamAppID;
+            games.push({id, name, picture, price, normalPrice, saving, review, score, steamId})
         }
         console.log(games)
         return games
     }
 
-
+//to actually buy the game: `https://store.steampowered.com/app/${steamId}/Iron_Age/`
 
   return (
     <div className='shop'>
