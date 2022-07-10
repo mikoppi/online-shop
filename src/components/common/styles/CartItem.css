@@ -1,0 +1,30 @@
+.cart-card > * {
+    margin:0;
+    
+}
+
+.cart-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    max-width: 250px;
+   
+    
+    position: relative;
+    
+}
+
+.cart-image {
+    position: relative;
+    padding: 0;
+    width: 250px;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+li {
+    list-style-type: none;
+}

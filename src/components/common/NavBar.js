@@ -1,17 +1,20 @@
 import React from 'react'
 import { Link, NavLink } from "react-router-dom"
 import './styles/NavBar.css'
-import { FaShoppingCart } from 'react-icons/fa'
+import { FaShoppingCart, FaSteam  } from 'react-icons/fa'
 
-const NavBar = () => {
+
+
+const NavBar = ({itemCount}) => {
 
   let activeStyle = {
-    backgroundColor: "black",
+    backgroundColor: "#1b2838",
+    
   };
 
   return (
     <nav className='nav'>
-      <Link to='/' className='site-name'>SteamGamesUnder10€</Link>
+      <Link to='/' className='site-name'>{<FaSteam size={50}/>}SteamDeals</Link>
       <ul>
         <li>
           <NavLink
@@ -20,7 +23,7 @@ const NavBar = () => {
               isActive ? activeStyle : undefined
               }
               >
-              Home
+              HOME
           </NavLink>
         </li>
         <li>
@@ -30,12 +33,12 @@ const NavBar = () => {
               isActive ? activeStyle : undefined
               }
               >
-              Shop
+              SHOP
           </NavLink>
         </li>
         <li>
-          <button className='cart-button'><FaShoppingCart size={42} style={{color: 'white'}}/></button>
-        
+          <button className='cart-button'><FaShoppingCart className='cart-icon' size={42} style={{color: '#7bc45e'}}/>{itemCount}</button>
+          
         </li>
       </ul>
     </nav>

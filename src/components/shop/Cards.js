@@ -3,7 +3,7 @@ import Card from './Card'
 import './shopStyles/Cards.css'
 
 
-const Cards = ({ games }) => {
+const Cards = ({ games, handleClick, }) => {
   return (
     <div className='cards'>
         {games.map(game => 
@@ -14,7 +14,8 @@ const Cards = ({ games }) => {
          normalPrice={game.normalPrice}
          saving={game.saving}
          review={game.review}
-         score={game.score} />
+         score={game.score}
+         handleClick={handleClick} />
         )}
     </div>
   )

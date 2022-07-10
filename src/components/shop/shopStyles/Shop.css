@@ -3,11 +3,12 @@
     justify-content: center;
     align-items: center;
     background-color: #1b2838;
+    
     background-image:
     linear-gradient(
       to right, 
       #1b2838, 
-      #66c0f45d 50%,  
+      #66c0f43f 50%,  
       #1b2838 
     );
     
