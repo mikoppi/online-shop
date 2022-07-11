@@ -1,0 +1,12 @@
+.amount {
+    display: flex;
+    gap: 1rem;
+    
+    align-items: center;
+    margin-top: 5px;
+    height: 20%;
+}
+.amount >h4 {
+    font-size: 1rem;
+}
+

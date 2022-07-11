@@ -59,6 +59,14 @@ const App = () => {
     setCartOpen((prevState) => !prevState)
   }
 
+  const handleDecrease = (e) => {
+    let itemName =  e.target.parentNode.id;
+    console.log(itemName)
+    let item = cartItems.filter(cartItem => cartItem.name === itemName)[0]
+    console.log(item)
+    //setCartItems((prevState) => [...prevState, item])
+  }
+
   
 
   return (
@@ -69,7 +77,8 @@ const App = () => {
       <div className='container'>
       {cartOpen ? <div className='cart-container'><Cart cartItems={cartItems}
                                                    handleCartOpen={handleCartOpen}
-                                                    amount={amountInCart}/>
+                                                    amount={amountInCart}
+                                                    handleDecrease={handleDecrease}/>
                   <CartBackground/></div>
        : null}
         <Routes>

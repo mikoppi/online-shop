@@ -7,7 +7,7 @@ const Cart = ({cartItems, handleCartOpen, amount,handleDecrease, handleIncrease}
     <div className='cart'>
         <h2>Your shopping cart:</h2>
         <ul className='items'>
-          {cartItems.map(item => 
+          {[...new Set(cartItems)].map(item => 
             <li><CartItem
             key = {item.id}
             name={item.name}
