@@ -92,15 +92,12 @@ img {
     font-size: 1rem;
     max-width: 250px;
     color: #ccdeec;
-    background-color: rgba(0, 0, 0, 0.356);
+    background-color: rgba(0, 0, 0, 0.274);
     position: relative;
     min-height: 230px;
     
 }
 
-.card:hover {
-    background-color: rgba(0, 0, 0, 0.589);
-}
 
 .review {
     display: flex;
@@ -155,6 +152,15 @@ img {
     width: 100%;
     position: absolute;
     bottom:0
+}
+
+.addcart:active {
+    box-shadow: 2px 2px 5px #4dfc64; 
+}
+
+.addcart:hover {
+    color:#ffffff;
+    font-weight: bolder;
 }
 
 .name {

@@ -5,7 +5,7 @@ import { FaShoppingCart, FaSteam  } from 'react-icons/fa'
 
 
 
-const NavBar = ({itemCount}) => {
+const NavBar = ({itemCount, handleCartOpen}) => {
 
   let activeStyle = {
     backgroundColor: "#1b2838",
@@ -37,7 +37,7 @@ const NavBar = ({itemCount}) => {
           </NavLink>
         </li>
         <li>
-          <button className='cart-button'><FaShoppingCart className='cart-icon' size={42} style={{color: '#7bc45e'}}/>{itemCount}</button>
+          <button className='cart-button'><FaShoppingCart className='cart-icon' size={42} style={{color: '#7bc45e'}} onClick={handleCartOpen}/>{itemCount}</button>
           
         </li>
       </ul>

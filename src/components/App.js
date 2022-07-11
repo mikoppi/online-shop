@@ -5,10 +5,13 @@ import Home from './homepage/Home'
 import Shop from './shop/Shop'
 import './App.css'
 import Cart from './common/Cart'
+import CartBackground from './common/CartBackground'
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
   const [games, setGames] = useState([]);
+  const [cartOpen, setCartOpen] = useState(false)
+  const [amountInCart, setAmountInCart] = useState(0)
     
 
     useEffect(() => {
@@ -48,14 +51,27 @@ const App = () => {
     let item = games.filter(game => game.name === itemName)[0]
     console.log(item)
     setCartItems((prevState) => [...prevState, item])
-}
+    console.log(cartItems)
+  }
+
+
+  const handleCartOpen = () => {
+    setCartOpen((prevState) => !prevState)
+  }
+
+  
 
   return (
     <>
       <NavBar itemCount={cartItems.length}
+              handleCartOpen={handleCartOpen}
       />
       <div className='container'>
-      <Cart cartItems={cartItems}/>
+      {cartOpen ? <div className='cart-container'><Cart cartItems={cartItems}
+                                                   handleCartOpen={handleCartOpen}
+                                                    amount={amountInCart}/>
+                  <CartBackground/></div>
+       : null}
         <Routes>
           <Route path='/' element = {<Home/>}/>
           <Route path='/shop' element = {<Shop games={games} handleClick={handleClick}/>}/>

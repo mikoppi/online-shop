@@ -14,6 +14,7 @@ const Shop = ({handleClick, games}) => {
         <Cards 
         games={games}
         handleClick={handleClick}
+        
         />
     </div>
   )
