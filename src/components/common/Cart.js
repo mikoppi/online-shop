@@ -2,7 +2,7 @@ import React from 'react'
 import './styles/Cart.css'
 import CartItem from './CartItem'
 
-const Cart = ({cartItems, handleCartOpen, amount,handleDecrease, handleIncrease}) => {
+const Cart = ({cartItems, handleCartOpen,handleDecrease, handleIncrease,amount}) => {
   return (
     <div className='cart'>
         <h2>Your shopping cart:</h2>

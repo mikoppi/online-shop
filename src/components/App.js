@@ -11,7 +11,7 @@ const App = () => {
   const [cartItems, setCartItems] = useState([]);
   const [games, setGames] = useState([]);
   const [cartOpen, setCartOpen] = useState(false)
-  const [amountInCart, setAmountInCart] = useState(0)
+  
     
 
     useEffect(() => {
@@ -38,9 +38,11 @@ const App = () => {
             const saving = game[i].savings;
             const score = game[i].steamRatingPercent;
             const steamId = game[i].steamAppID;
-            games.push({id, name, picture, price, normalPrice, saving, review, score, steamId})
+            const gameAmount = 1;
+            
+            games.push({id, name, picture, price, normalPrice, saving, review, score, steamId, gameAmount})
         }
-        console.log(games)
+        //console.log(games)
         return games
     }
 
@@ -49,7 +51,7 @@ const App = () => {
   const handleClick = (e) => {
     let itemName =  e.target.parentNode.id;
     let item = games.filter(game => game.name === itemName)[0]
-    console.log(item)
+    
     setCartItems((prevState) => [...prevState, item])
     console.log(cartItems)
   }
@@ -61,13 +63,32 @@ const App = () => {
 
   const handleDecrease = (e) => {
     let itemName =  e.target.parentNode.id;
-    console.log(itemName)
     let item = cartItems.filter(cartItem => cartItem.name === itemName)[0]
-    console.log(item)
-    //setCartItems((prevState) => [...prevState, item])
+    console.log(cartItems)
+    cartItems.splice(cartItems.findIndex(a => a === item), 1)
+    let quantity = calculateAmounts(cartItems, item)
+    console.log(quantity)
+    //console.log(updatedCart)
+    //console.log(item)
+    setCartItems(cartItems)
+    console.log(cartItems)
+  
   }
 
+  const handleIncrease = (e) => {
+    let itemName =  e.target.parentNode.id;
+    let item = games.filter(game => game.name === itemName)[0]
+    setCartItems((prevState) => [...prevState, item])
+  }
   
+  const calculateAmounts = (arr,cartItem) => {
+    let counts = {}
+      for(let item of arr) {
+          counts[item]= counts[item] ? counts[item] +1 : 1;
+      }
+    return counts[cartItem]
+      
+  }
 
   return (
     <>
@@ -77,8 +98,9 @@ const App = () => {
       <div className='container'>
       {cartOpen ? <div className='cart-container'><Cart cartItems={cartItems}
                                                    handleCartOpen={handleCartOpen}
-                                                    amount={amountInCart}
-                                                    handleDecrease={handleDecrease}/>
+                                                   handleIncrease={handleIncrease}
+                                                    handleDecrease={handleDecrease}
+                                                    amount={calculateAmounts(cartItems)}/>
                   <CartBackground/></div>
        : null}
         <Routes>

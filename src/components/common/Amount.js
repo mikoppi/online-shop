@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './styles/Amount.css'
 import { FaMinus, FaPlus } from 'react-icons/fa'
 
-const Amount = ({ price,handleDecrease, handleIncrease, cartItems, name}) => {
-
-    let amount=cartItems.filter(item => item.name === name).length
+const Amount = ({ price,handleDecrease, handleIncrease, cartItems, name, amount}) => {
+    console.log(cartItems)
+    
 
   return (
     <div className='amounts'>
