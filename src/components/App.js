@@ -38,9 +38,9 @@ const App = () => {
             const saving = game[i].savings;
             const score = game[i].steamRatingPercent;
             const steamId = game[i].steamAppID;
-            const gameAmount = 1;
+            const quantity = 1;
             
-            games.push({id, name, picture, price, normalPrice, saving, review, score, steamId, gameAmount})
+            games.push({id, name, picture, price, normalPrice, saving, review, score, steamId, quantity})
         }
         //console.log(games)
         return games
@@ -48,11 +48,17 @@ const App = () => {
 
 
 
-  const handleClick = (e) => {
+  const handleAddCart = (e) => {
     let itemName =  e.target.parentNode.id;
-    let item = games.filter(game => game.name === itemName)[0]
-    
-    setCartItems((prevState) => [...prevState, item])
+    let itemIndex = cartItems.findIndex((i) => i.name === itemName)
+    if (itemIndex>-1) {
+      const newCart = cartItems.slice();
+      newCart[itemIndex].quantity++;
+      setCartItems(newCart)
+    } else {
+      let item = games.filter(game => game.name === itemName)[0]
+      setCartItems((prevState) => [...prevState, item])
+    }
     console.log(cartItems)
   }
 
@@ -63,36 +69,32 @@ const App = () => {
 
   const handleDecrease = (e) => {
     let itemName =  e.target.parentNode.id;
-    let item = cartItems.filter(cartItem => cartItem.name === itemName)[0]
-    console.log(cartItems)
-    cartItems.splice(cartItems.findIndex(a => a === item), 1)
-    let quantity = calculateAmounts(cartItems, item)
-    console.log(quantity)
-    //console.log(updatedCart)
-    //console.log(item)
-    setCartItems(cartItems)
-    console.log(cartItems)
+    let itemIndex = cartItems.findIndex((i) => i.name === itemName);
+    if (itemIndex>-1) {
+      const newCart = cartItems.slice();
+      newCart[itemIndex].quantity--;
+      setCartItems(newCart)
+    }
+    
+   
   
   }
 
   const handleIncrease = (e) => {
     let itemName =  e.target.parentNode.id;
-    let item = games.filter(game => game.name === itemName)[0]
-    setCartItems((prevState) => [...prevState, item])
+    let itemIndex = cartItems.findIndex((i) => i.name === itemName);
+    if (itemIndex>-1) {
+      const newCart = cartItems.slice();
+      newCart[itemIndex].quantity++;
+      setCartItems(newCart)
+    }
   }
   
-  const calculateAmounts = (arr,cartItem) => {
-    let counts = {}
-      for(let item of arr) {
-          counts[item]= counts[item] ? counts[item] +1 : 1;
-      }
-    return counts[cartItem]
-      
-  }
+
 
   return (
     <>
-      <NavBar itemCount={cartItems.length}
+      <NavBar itemCount={cartItems.reduce((a,b)=> a+b.quantity,0)}
               handleCartOpen={handleCartOpen}
       />
       <div className='container'>
@@ -100,12 +102,12 @@ const App = () => {
                                                    handleCartOpen={handleCartOpen}
                                                    handleIncrease={handleIncrease}
                                                     handleDecrease={handleDecrease}
-                                                    amount={calculateAmounts(cartItems)}/>
+                                                    />
                   <CartBackground/></div>
        : null}
         <Routes>
           <Route path='/' element = {<Home/>}/>
-          <Route path='/shop' element = {<Shop games={games} handleClick={handleClick}/>}/>
+          <Route path='/shop' element = {<Shop games={games} handleClick={handleAddCart}/>}/>
         </Routes>
 
       </div> 
