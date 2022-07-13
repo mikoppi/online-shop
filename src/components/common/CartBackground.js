@@ -1,9 +1,9 @@
 import React from 'react'
 import './styles/CartBackground.css'
 
-const CartBackground = () => {
+const CartBackground = ({handleCartOpen}) => {
   return (
-    <div className='background'></div>
+    <div onClick={handleCartOpen} className='background'></div>
   )
 }
 

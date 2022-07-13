@@ -103,7 +103,7 @@ const App = () => {
                                                    handleIncrease={handleIncrease}
                                                     handleDecrease={handleDecrease}
                                                     />
-                  <CartBackground/></div>
+                  <CartBackground handleCartOpen={handleCartOpen}/></div>
        : null}
         <Routes>
           <Route path='/' element = {<Home/>}/>

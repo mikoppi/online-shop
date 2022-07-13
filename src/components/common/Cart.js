@@ -20,9 +20,11 @@ const Cart = ({cartItems, handleCartOpen,handleDecrease, handleIncrease,amount})
             
             /></li>)}
         </ul>
-        <h1>Total: ${cartItems.reduce((a,b) => a+(b.price*b.quantity),0).toFixed(2)}</h1>
-        <button className='checkout-button'>Checkout</button>
-        <button onClick={handleCartOpen} className='close-button'>Close</button>
+        <div className='buttons'>
+          <h1>Total: ${cartItems.reduce((a,b) => a+(b.price*b.quantity),0).toFixed(2)}</h1>
+          <button className='checkout-button'>Checkout</button>
+          <button onClick={handleCartOpen} className='close-button'>Close</button>
+        </div>
     </div>
   )
 }

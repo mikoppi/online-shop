@@ -1,0 +1,19 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1b2838;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    
+    
+    background-image:
+    linear-gradient(
+      to right, 
+      #1b2838, 
+      #66c0f43f 50%,  
+      #1b2838 
+    );
+    
+}
