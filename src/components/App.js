@@ -6,6 +6,7 @@ import Shop from './shop/Shop'
 import './App.css'
 import Cart from './common/Cart'
 import CartBackground from './common/CartBackground'
+import Footer from './common/Footer'
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -93,7 +94,7 @@ const App = () => {
 
 
   return (
-    <>
+    <div className='main'>
       <NavBar itemCount={cartItems.reduce((a,b)=> a+b.quantity,0)}
               handleCartOpen={handleCartOpen}
       />
@@ -109,9 +110,9 @@ const App = () => {
           <Route path='/' element = {<Home/>}/>
           <Route path='/shop' element = {<Shop games={games} handleClick={handleAddCart}/>}/>
         </Routes>
-
       </div> 
-    </>
+        <Footer/>
+    </div>
   )
 }
 
