@@ -14,7 +14,7 @@ const Footer = () => {
     <div className='footer'>
       Made by mikoppi
       <GithubLink
-        href="https://github.com/michalosman"
+        href="https://github.com/mikoppi"
         target="_blank"
         rel="noopener"
       >
