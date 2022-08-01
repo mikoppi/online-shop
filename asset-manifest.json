@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/http//mikoppi.github.io/online-shop/static/css/main.50780aba.css",
+    "main.js": "/http//mikoppi.github.io/online-shop/static/js/main.3e9a6c41.js",
+    "static/media/OfficinaSansStd-Bold.otf": "/http//mikoppi.github.io/online-shop/static/media/OfficinaSansStd-Bold.b152ec581db64cc3a86d.otf",
+    "index.html": "/http//mikoppi.github.io/online-shop/index.html",
+    "main.50780aba.css.map": "/http//mikoppi.github.io/online-shop/static/css/main.50780aba.css.map",
+    "main.3e9a6c41.js.map": "/http//mikoppi.github.io/online-shop/static/js/main.3e9a6c41.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.50780aba.css",
+    "static/js/main.3e9a6c41.js"
+  ]
+}
