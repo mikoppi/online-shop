@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/https//mikoppi.github.io/online-shop/static/css/main.9743f63e.css",
-    "main.js": "/https//mikoppi.github.io/online-shop/static/js/main.262ab9a8.js",
-    "static/media/OfficinaSansStd-Bold.otf": "/https//mikoppi.github.io/online-shop/static/media/OfficinaSansStd-Bold.b152ec581db64cc3a86d.otf",
-    "index.html": "/https//mikoppi.github.io/online-shop/index.html",
-    "main.9743f63e.css.map": "/https//mikoppi.github.io/online-shop/static/css/main.9743f63e.css.map",
-    "main.262ab9a8.js.map": "/https//mikoppi.github.io/online-shop/static/js/main.262ab9a8.js.map"
+    "main.css": "/online-shop/static/css/main.d446029f.css",
+    "main.js": "/online-shop/static/js/main.a9635830.js",
+    "static/media/OfficinaSansStd-Bold.otf": "/online-shop/static/media/OfficinaSansStd-Bold.b152ec581db64cc3a86d.otf",
+    "index.html": "/online-shop/index.html",
+    "main.d446029f.css.map": "/online-shop/static/css/main.d446029f.css.map",
+    "main.a9635830.js.map": "/online-shop/static/js/main.a9635830.js.map"
   },
   "entrypoints": [
-    "static/css/main.9743f63e.css",
-    "static/js/main.262ab9a8.js"
+    "static/css/main.d446029f.css",
+    "static/js/main.a9635830.js"
   ]
 }
