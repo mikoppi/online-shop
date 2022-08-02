@@ -3,35 +3,107 @@
     padding: 0;
 }
 
-
-.home {
+.home-content {
+    z-index: 2;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1b2838;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top:40%;
+    
+}
+
+
+
+.home-background {
+    background: linear-gradient(132deg, #2ead39, #315088, #000000);
+    background-size: 400% 400%;
+    animation: Gradient 12s ease infinite;
+    position: relative;
     height: 100vh;
-    width: 100vw;
-    color: #8cc9f8;
+    width: 100%;
+    overflow: hidden;
+    padding:0;
+    margin:0px;
+    z-index: -1;
     
     
-    background-image:
-    linear-gradient(
-      to right, 
-      #1b2838, 
-      #66c0f43f 50%,  
-      #1b2838 
-    );
-    
-}
+  }
+  .cube {
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #D7D4E4;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 12s ease-in forwards infinite;
+  }
+  .cube:nth-child(2n) {
+    border-color: #FFF ;
+  }
+  .cube:nth-child(2) {
+    animation-delay: 2s;
+    left: 25vw;
+    top: 40vh;
+  }
+  .cube:nth-child(3) {
+    animation-delay: 4s;
+    left: 75vw;
+    top: 50vh;
+  }
+  .cube:nth-child(4) {
+    animation-delay: 6s;
+    left: 90vw;
+    top: 10vh;
+  }
+  .cube:nth-child(5) {
+    animation-delay: 8s;
+    left: 10vw;
+    top: 85vh;
+  }
+  .cube:nth-child(6) {
+    animation-delay: 10s;
+    left: 50vw;
+    top: 10vh;
+  }
+  
+  /* Animate Background*/
+@keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes cube {
+    from {
+      transform: scale(0) rotate(0deg) translate(-50%, -50%);
+      opacity: 1;
+    }
+    to {
+      transform: scale(20) rotate(960deg) translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
 
-.home >h1 {
+  .home-content >h1 {
     font-size: 5rem;
-    margin-top: 30vh;
+    padding: 0;
+    margin: 0;
+    color:#8cc9f8
 }
 
-.home>h2 {
-    margin-bottom:0px;
+.home-content>h2 {
+    margin-bottom:30px;
+    color:#8cc9f8
 }
 
 .visit {
@@ -47,8 +119,8 @@
     border-style: none;
     font-family: inherit;
     color: #a7e48f;
-    position: relative;
-    bottom: 200px;
+    transition: transform 1s;
+    
     
 }
 .visit:active {
@@ -57,5 +129,9 @@
 
 .visit:hover {
     color:#ffffff;
+    transform: scale(1.2);
     
 }
+
+
+

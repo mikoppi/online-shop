@@ -1,9 +1,15 @@
 import React from 'react'
 import './styles/CartBackground.css'
 
-const CartBackground = ({handleCartOpen}) => {
+
+const CartBackground = ({handleCartOpen, cartOpen}) => {
   return (
-    <div onClick={handleCartOpen} className='background'></div>
+    
+      
+    
+  
+    <div onClick={handleCartOpen} className='background' style={{left: cartOpen ? '0' : '-100%'}} ></div>
+   
   )
 }
 

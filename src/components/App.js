@@ -99,13 +99,15 @@ const App = () => {
               handleCartOpen={handleCartOpen}
       />
       <div className='container'>
-      {cartOpen ? <div className='cart-container'><Cart cartItems={cartItems}
+      
+       <Cart cartItems={cartItems}
                                                    handleCartOpen={handleCartOpen}
                                                    handleIncrease={handleIncrease}
                                                     handleDecrease={handleDecrease}
+                                                    cartOpen={cartOpen}
                                                     />
-                  <CartBackground handleCartOpen={handleCartOpen}/></div>
-       : null}
+
+        <CartBackground handleCartOpen={handleCartOpen} cartOpen={cartOpen}/>                                          
         <Routes>
           <Route path='/' element = {<Home/>}/>
           <Route path='/shop' element = {<Shop games={games} handleClick={handleAddCart}/>}/>

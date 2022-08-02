@@ -2,9 +2,11 @@ import React from 'react'
 import './styles/Cart.css'
 import CartItem from './CartItem'
 
-const Cart = ({cartItems, handleCartOpen,handleDecrease, handleIncrease,amount}) => {
+
+const Cart = ({cartItems, handleCartOpen,handleDecrease, handleIncrease, cartOpen}) => {
   return (
-    <div className='cart'>
+    
+    <div className='cart' style={{right: cartOpen ? '0' : '-110%'}} >
         <h2>Your shopping cart:</h2>
         <ul className='items'>
           {cartItems.map(item => 
@@ -26,6 +28,7 @@ const Cart = ({cartItems, handleCartOpen,handleDecrease, handleIncrease,amount})
           <button onClick={handleCartOpen} className='close-button'>Close</button>
         </div>
     </div>
+    
   )
 }
 
