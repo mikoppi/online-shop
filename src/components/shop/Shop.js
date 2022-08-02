@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import Pagination from '../common/Pagination';
 import Transitions from '../common/Transitions';
 import Cards from './Cards';
 import './shopStyles/Shop.css'
 
 
-const Shop = ({handleClick, games}) => {
+const Shop = ({handleClick, games, gamesPerPage, paginate, currentGames, currentPage}) => {
     
     
 
@@ -15,9 +16,15 @@ const Shop = ({handleClick, games}) => {
     <div className='shop'>
       <Transitions>
         <Cards 
-        games={games}
+        games={currentGames}
         handleClick={handleClick}
         
+        />
+        <Pagination
+        gamesPerPage={gamesPerPage}
+        totalGames={games.length}
+        paginate={paginate}
+        currentPage={currentPage}
         />
       </Transitions>
     </div>
