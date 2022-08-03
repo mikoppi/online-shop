@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/online-shop/static/css/main.d446029f.css",
-    "main.js": "/online-shop/static/js/main.a9635830.js",
+    "main.css": "/online-shop/static/css/main.52087632.css",
+    "main.js": "/online-shop/static/js/main.6c7be523.js",
     "static/media/OfficinaSansStd-Bold.otf": "/online-shop/static/media/OfficinaSansStd-Bold.b152ec581db64cc3a86d.otf",
     "index.html": "/online-shop/index.html",
-    "main.d446029f.css.map": "/online-shop/static/css/main.d446029f.css.map",
-    "main.a9635830.js.map": "/online-shop/static/js/main.a9635830.js.map"
+    "main.52087632.css.map": "/online-shop/static/css/main.52087632.css.map",
+    "main.6c7be523.js.map": "/online-shop/static/js/main.6c7be523.js.map"
   },
   "entrypoints": [
-    "static/css/main.d446029f.css",
-    "static/js/main.a9635830.js"
+    "static/css/main.52087632.css",
+    "static/js/main.6c7be523.js"
   ]
 }
