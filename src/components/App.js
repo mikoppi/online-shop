@@ -14,6 +14,7 @@ const App = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [gamesPerPage] = useState(15);
+  const [sortIndex, setSortIndex] = useState('')
 
   useEffect(() => {
     const loadCards = async () => {
@@ -21,6 +22,29 @@ const App = () => {
     };
     loadCards();
   }, []);
+
+  useEffect(() => {
+    let sortedGames;
+    switch(sortIndex) {
+      case 'cheapest':
+        sortedGames = games.sort((a,b) => a.price-b.price)
+        console.log(sortIndex)
+        setGames(sortedGames)
+        break;
+      case 'expensive':
+        sortedGames = games.sort((a,b) => b.price-a.price)
+        console.log(sortIndex)
+        setGames(sortedGames)
+        break;
+      case 'sale':
+        sortedGames = games.sort((a,b) => b.saving-a.saving)
+        console.log(sortIndex)
+        setGames(sortedGames)
+        break;
+      default:
+        return
+    }
+  },[sortIndex])
 
   const getGames = async () => {
     const games = [];
@@ -54,7 +78,7 @@ const App = () => {
       });
     }
     //console.log(games)
-    return games;
+    return games.sort((a,b) => a.price-b.price);
   };
 
   const handleAddCart = (e) => {
@@ -96,10 +120,20 @@ const App = () => {
     }
   };
 
+
+  const handleSort = (e) => {
+    let option = e.target.value
+    setSortIndex(option)
+   
+  }
+   
+
+  
+
   //pagination
-  const indexOfLast = currentPage * gamesPerPage;
-  const indexOfFirst = indexOfLast - gamesPerPage;
-  const currentGames = games.slice(indexOfFirst, indexOfLast);
+  // const indexOfLast = currentPage * gamesPerPage;
+  // const indexOfFirst = indexOfLast - gamesPerPage;
+  // const currentGames = games.slice(indexOfFirst, indexOfLast);
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
@@ -125,9 +159,10 @@ const App = () => {
             element={<Shop games={games} 
             handleClick={handleAddCart}
             gamesPerPage={gamesPerPage}
-            currentGames={currentGames}
+            // currentGames={currentGames}
             paginate={paginate}
-            currentPage={currentPage} />}
+            currentPage={currentPage}
+            handleSort={handleSort} />}
           />
         </Routes>
         
