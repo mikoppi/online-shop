@@ -18,14 +18,17 @@ const Shop = ({handleClick, games, gamesPerPage, paginate, currentPage, handleSo
     
     <div className='shop'>
       <Transitions>
-      <label htmlFor="sort">Sort by:</label>
+      <div className='select-wrapper'>
+        <label htmlFor="sort">Sort by:</label>
 
-        <select onChange={(e) => handleSort(e)} name="sort" id="sort">
-          <option value="cheapest">Cheapest first</option>
-          <option value="expensive">Most expensive first</option>
-          <option value="sale">Biggest sale %</option>
-          
+          <select onChange={(e) => handleSort(e)} name="sort" id="sort">
+          <option value="">--Choose your option--</option>
+            <option value="cheapest">Cheapest first</option>
+            <option value="expensive">Most expensive first</option>
+            <option value="sale">Biggest sale %</option>
+            
         </select>
+        </div>
         <Cards 
         games={currentGames}
         handleClick={handleClick}

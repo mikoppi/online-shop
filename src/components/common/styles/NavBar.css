@@ -20,6 +20,23 @@
 
 }
 
+@media (max-width: 800px) {
+    .nav {
+        justify-content: center;
+        gap:0.1rem; 
+    }
+
+
+    nav > .site-name {
+        font-size: 1.2rem;
+    
+    }
+
+    .router-link {
+        font-size: 0.8rem;
+    }
+}
+
 a {
     color: inherit;
     text-decoration: none;

@@ -19,6 +19,7 @@ const NavBar = ({itemCount, handleCartOpen}) => {
         <li>
           <NavLink
               to="/"
+              className='router-link'
               style={({ isActive }) =>
               isActive ? activeStyle : undefined
               }
@@ -29,6 +30,7 @@ const NavBar = ({itemCount, handleCartOpen}) => {
         <li>
           <NavLink
               to="/shop"
+              className='router-link'
               style={({ isActive }) =>
               isActive ? activeStyle : undefined
               }

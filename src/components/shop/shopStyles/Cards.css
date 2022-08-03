@@ -8,3 +8,9 @@
     margin-top: 3rem;
     margin-bottom: 4rem;
 }
+
+@media (max-width:400px) {
+    .cards {
+        margin-left: 34px;
+    }
+}

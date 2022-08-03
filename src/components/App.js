@@ -14,37 +14,19 @@ const App = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [gamesPerPage] = useState(15);
-  const [sortIndex, setSortIndex] = useState('')
+  const [sort, setSort] = useState('')
+  
 
   useEffect(() => {
     const loadCards = async () => {
+      
       setGames(await getGames());
     };
     loadCards();
-  }, []);
+  }, [sort]);
 
-  useEffect(() => {
-    let sortedGames;
-    switch(sortIndex) {
-      case 'cheapest':
-        sortedGames = games.sort((a,b) => a.price-b.price)
-        console.log(sortIndex)
-        setGames(sortedGames)
-        break;
-      case 'expensive':
-        sortedGames = games.sort((a,b) => b.price-a.price)
-        console.log(sortIndex)
-        setGames(sortedGames)
-        break;
-      case 'sale':
-        sortedGames = games.sort((a,b) => b.saving-a.saving)
-        console.log(sortIndex)
-        setGames(sortedGames)
-        break;
-      default:
-        return
-    }
-  },[sortIndex])
+
+
 
   const getGames = async () => {
     const games = [];
@@ -78,7 +60,7 @@ const App = () => {
       });
     }
     //console.log(games)
-    return games.sort((a,b) => a.price-b.price);
+    return sortArr(sort,games);
   };
 
   const handleAddCart = (e) => {
@@ -123,10 +105,34 @@ const App = () => {
 
   const handleSort = (e) => {
     let option = e.target.value
-    setSortIndex(option)
-   
+    if (option==='') return;
+    setSort(option)
   }
-   
+  
+  const sortArr = (sortBy, arr) => {
+
+    let sortedGames;
+      switch(sortBy) {
+        case 'cheapest':
+          return sortedGames = arr.sort((a,b) => a.price-b.price);
+          // console.log(option)
+          // setGames(sortedGames)
+          
+        case 'expensive':
+          return sortedGames = arr.sort((a,b) => b.price-a.price);
+          // console.log(option)
+          // setGames(sortedGames)
+          
+        case 'sale':
+          return sortedGames = arr.sort((a,b) => b.saving-a.saving);
+          // console.log(option)
+          // setGames(sortedGames)
+        case '': 
+          return arr;
+        default:
+          return
+      }
+  }  
 
   
 
